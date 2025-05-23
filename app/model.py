@@ -1,5 +1,11 @@
-from fastai.vision.all import load_learner, PILImage
+import pathlib
+import sys
 
+# Patch WindowsPath if on Linux
+if sys.platform != "win32":
+    pathlib.WindowsPath = pathlib.PosixPath
+
+from fastai.vision.all import load_learner, PILImage
 learn = load_learner("model/export.pkl")
 
 async def predict_face_problem(file):
