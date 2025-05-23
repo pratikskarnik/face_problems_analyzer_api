@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+python-multipart
+fastai<2.8.0
+pillow
